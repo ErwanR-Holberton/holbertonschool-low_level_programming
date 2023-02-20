@@ -2,7 +2,7 @@
 
 /**
  * _islower - Entry point
- *
+ * @c : C is tested (lower or upper ?)
  * Return: if lowercase
  */
 int _islower(int c)
