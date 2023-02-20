@@ -16,7 +16,7 @@ int main(void)
 		if (n <= 9)
 			putchar(n + 48);
 		else
-			putchar(n + 65 - 10);
+			putchar(n + 97 - 10);
 		/* on retire 10 parce qu'on a print 0 a 9 avant et ca décale */
 	}
 
