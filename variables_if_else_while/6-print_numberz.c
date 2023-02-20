@@ -9,11 +9,11 @@
  */
 int main(void)
 {
-	char n;
+	int n;
 
-	for (n = '0' ; n <= '9' ; n++)
+	for (n = 0 ; n <= 9 ; n++)
 	{
-		putchar(n);
+		putchar(n + 48);
 	}
 
 	putchar('\n');
