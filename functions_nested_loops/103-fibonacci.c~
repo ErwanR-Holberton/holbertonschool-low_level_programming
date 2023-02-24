@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	long int i, numA = 0, numB = 1, tempo, sum = 0;
+
+	while (numA + numB < 4000000)
+	{
+		tempo = numA + numB;
+		numA = numB;
+		numB = tempo;
+		if (tempo % 2 == 0)
+			sum = sum + tempo;
+	}
+	printf("%lu\n", sum);
+	return (0);
+}

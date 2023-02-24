@@ -7,17 +7,16 @@
  */
 int main(void)
 {
-	long int i, numA = 0, numB = 1, tempo, sum = 0;
+	long int numA = 0, numB = 1, tempo, sum = 0;
 
-	for (i = 0; i < 50; i++)
+	while (numA + numB < 4000000)
 	{
 		tempo = numA + numB;
 		numA = numB;
 		numB = tempo;
-		printf("%lu", numB);
-		if (i != 49)
-			printf(", ");
+		if (tempo % 2 == 0)
+			sum = sum + tempo;
 	}
-	printf("\n");
+	printf("%lu\n", sum);
 	return (0);
 }
