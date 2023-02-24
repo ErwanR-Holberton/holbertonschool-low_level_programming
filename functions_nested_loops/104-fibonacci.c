@@ -23,7 +23,8 @@ int main(void)
 		highA = highB;
 		numB = tempo;
 		highB = hightempo;
-		printf("%lu", highB);
+		if (highB != 0)
+			printf("%lu", highB);
 		printf("%lu", numB);
 		if (i != 97)
 			printf(", ");
