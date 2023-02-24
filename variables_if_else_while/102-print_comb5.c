@@ -9,31 +9,21 @@
  */
 int main(void)
 {
-	int n, m, o, p;
+	int n, m;
 
-	for (n = 0 ; n <= 9 ; n++)
+	for (n = 0 ; n <= 99 ; n++)
 	{
-		for (m = 0 ; m <= 9 ; m++)
+		for (m = 0 ; m <= 99 ; m++)
 		{
-			for (o = 0 ; o <= 9 ; o++)
+			putchar(n / 10 + 48);
+			putchar(n % 10 + 48);
+			putchar(' ');
+			putchar(m / 10 + 48);
+			putchar(m % 10 + 48);
+			if ((n != 99) || (m != 99))
 			{
-				for (p = 0 ; p <= 9 ; p++)
-				{
-					putchar(n + 48);
-					putchar(m + 48);
-					putchar(' ');
-					putchar(o + 48);
-					putchar(p + 48);
-					if ((n == 9) && (m == 9) && (o == 9) && (p == 9))
-					{
-
-					}
-					else
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
