@@ -2,18 +2,18 @@
 #include "main.h"
 
 /**
- * _strprbk - Entry point
+ * _strstr - Entry point
  *
- * searches a string for any of a set of bytes.
+ * searches a string for any substring
  *
  *
  * @s : point into the area where the string is
- * @accept : pointer to list of valid char
+ * @accept : pointer to substring
  *
  *
  * Return: pointer to c
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *s, char *accept)
 {
 	unsigned int i = 0, j = 0;
 
