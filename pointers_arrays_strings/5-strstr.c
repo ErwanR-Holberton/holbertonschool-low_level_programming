@@ -7,26 +7,26 @@
  * searches a string for any substring
  *
  *
- * @s : point into the area where the string is
- * @accept : pointer to substring
+ * @haystack : point into the area where the string is
+ * @needle : pointer to substring
  *
  *
  * Return: pointer to c
  */
-char *_strstr(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i = 0, j = 0;
 
-	while (s[i] != '\0')
+	while (haystack[i] != '\0')
 	{
 		j = 0;
-		while (accept[j] == s[i + j])
+		while (needle[j] == haystack[i + j])
 		{
 			j++;
-			if (accept[j] == '\0')
-				return (&s[i]);
+			if (needle[j] == '\0')
+				return (&haystack[i]);
 		}
 		i++;
 	}
-	return (NULL);
+	return (haystack);
 }
