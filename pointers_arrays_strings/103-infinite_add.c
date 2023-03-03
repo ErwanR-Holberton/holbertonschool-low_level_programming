@@ -23,49 +23,48 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		ln2++;
 	if ((ln1 + 1 > size_r) || (ln2 + 1 > size_r))
 		return (0);
+	if (ln1 > ln2)
+	{
+		Bigger = ln1;
+		Lower = ln2;
+	}
 	else
 	{
-		if (ln1 > ln2)
-		{
-			Bigger = ln1;
-			Lower = ln2;
-		}
+		Bigger = ln2;
+		Lower = ln1;
+		p = n1;
+		n1 = n2;
+		n2 = p;
+	}
+	ln1 = 0;
+	ln2 = 0;
+	r[Bigger] = '\0';
+	for (i = Bigger - 1; (i >= 0); i--)
+	{
+		if (Bigger - i  > Lower)
+			ln2 = 0;
 		else
+			ln2 = n2[i - (Bigger - Lower)] - '0';
+		ln1 = n1[i] - '0';
+		r[i] = (ln1 + ln2 + tempo) % 10 + '0';
+		if (ln1 + ln2 + tempo > 9)
+			tempo = 1;
+		else
+			tempo = 0;
+		if (i == 0)
 		{
-			Bigger = ln2;
-			Lower = ln1;
-			p = n1;
-			n1 = n2;
-			n2 =p;
-		}
-		ln1=0;
-		ln2=0;
-		r[Bigger] = '\0';
-		for (i = Bigger - 1; (i >= 0); i--)
-		{
-			if (Bigger - i  > Lower)
-				ln2 = 0;
-			else
-				ln2 = n2[i - (Bigger - Lower)] - '0';
-			ln1 = n1[i] - '0';
-			r[i] = (ln1 + ln2 + tempo) % 10 + '0';
-			if (ln1 + ln2 + tempo > 9)
-				tempo = 1;
-			else
-				tempo = 0;
-			if (i == 0)
-				if(tempo == 1)
+			if(tempo == 1)
+			{
+				if (Bigger + 1 < size_r)
 				{
-					if (Bigger + 1 < size_r)
-					{
-						for (j = Bigger + 1; j > 0; j--)
-							r[j] = r[j - 1];
-						r[0] = tempo + '0';
-					}
-					else
-						return (0);
+					for (j = Bigger + 1; j > 0; j--)
+						r[j] = r[j - 1];
+					r[0] = tempo + '0';
 				}
+				else
+					return (0);
+			}
 		}
-		return (r);
-        }
-  }
+	}
+	return (r);
+}
