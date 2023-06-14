@@ -13,6 +13,7 @@ int main(void)
 	long l = 0;
 	long long ll = 0;
 	float f = 0;
+
 	printf("Size of a char: %ld byte(s)\n", sizeof(a));
 	printf("Size of a char: %ld byte(s)\n", sizeof(i));
 	printf("Size of a char: %ld byte(s)\n", sizeof(l));
