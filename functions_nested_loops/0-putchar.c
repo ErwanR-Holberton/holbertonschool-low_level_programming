@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <main.h>
+
 /**
  * main - Entry point
  *
@@ -8,8 +8,6 @@
 
 int main(void)
 {
-	int num, numbis;
-
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
