@@ -7,17 +7,16 @@
  */
 int main(void)
 {
-	int n = 2, nminus1 = 1, count, tmp;
+	long int n = 1, nminus1 = 0, count, tmp, sum = 0;
 
-	for (count = 0; count <= 50; count++)
+	for (count = 0; count < 50; count++)
 	{
 		tmp = n + nminus1;
 		nminus1 = n;
 		n = tmp;
-		printf("%d",n);
-		if (count != 50)
-			printf(", ");
+		if (n % 2 == 0)
+			sum = sum + n;
 	}
-	printf("\n");
+	printf("%ld\n", sum);
 	return (0);
 }
