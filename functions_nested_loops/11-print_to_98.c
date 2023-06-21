@@ -25,13 +25,12 @@ void print_to_98(int n)
 		if (n >= 10)
 			_putchar(n / 10 % 10 + '0');
 		_putchar(n % 10 + '0');
-
+		n = tempo;
 		if (n != 98)
 		{
 			_putchar(',');
 			_putchar(' ');
 		}
-		n = tempo;
 		n = n + ((n < 98) - (n > 98)); /*n++ ou n--*/
 	}
 	_putchar('9');
