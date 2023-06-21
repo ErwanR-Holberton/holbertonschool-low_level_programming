@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	int n = 1, nminus1 = 0, count, tmp;
+	long int n = 1, nminus1 = 0, count, tmp;
 
 	for (count = 0; count <= 50; count++)
 	{
 		tmp = n + nminus1;
 		nminus1 = n;
 		n = tmp;
-		printf("%d",n);
+		printf("%ld", n);
 		if (count != 50)
 			printf(", ");
 	}
