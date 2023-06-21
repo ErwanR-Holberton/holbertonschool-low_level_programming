@@ -10,8 +10,8 @@ void print_to_98(int n)
 {
 	int tempo = n;
 
-	 while (n != 98)
-	 {
+	while (n != 98)
+	{
 		tempo = n;
 		if (n < 0)
 		{
