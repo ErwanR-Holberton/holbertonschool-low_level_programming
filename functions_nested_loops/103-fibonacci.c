@@ -14,7 +14,7 @@ int main(void)
 		tmp = n + nminus1;
 		nminus1 = n;
 		n = tmp;
-		if (n % 2 == 0)
+		if (n % 2 == 0 && n <= 4000000)
 			sum = sum + n;
 	}
 	printf("%ld\n", sum);
