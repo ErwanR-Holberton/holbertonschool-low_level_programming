@@ -8,42 +8,33 @@
  */
 void print_to_98(int n)
 {
-	if (n > 98)
-		for (; n >= 98; n--)
+	int tempo = n;
+
+	 while (n != 98)
+	 {
+		tempo = n;
+		if (n < 0)
 		{
-			if (n >= 1000)
-				_putchar(n / 1000 + '0');
-			if (n >= 100)
-				_putchar(n / 100 % 10 + '0');
-			if (n >= 10)
-				_putchar(n / 10 % 10 + '0');
-			_putchar(n % 10 + '0');
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			_putchar('-');
+			n = -n;
 		}
-	else
-		for (; n <= 98; n++)
+		if (n >= 1000)
+			_putchar(n / 1000 + '0');
+		if (n >= 100)
+			_putchar(n / 100 % 10 + '0');
+		if (n >= 10)
+			_putchar(n / 10 % 10 + '0');
+		_putchar(n % 10 + '0');
+
+		if (n != 98)
 		{
-			if (n < 0)
-				_putchar('-');
-			if (n <= -100)
-				_putchar(-n / 100 + '0');
-			if (n <= -10)
-				_putchar(-n / 10 + '0');
-			if (n >= 10)
-				_putchar(n / 10 + '0');
-			if (n < 0)
-				_putchar(-n % 10 + '0');
-			else
-				_putchar(n % 10 + '0');
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			_putchar(',');
+			_putchar(' ');
 		}
+		n = tempo;
+		n = n + ((n < 98) - (n > 98)); /*n++ ou n--*/
+	}
+	_putchar('9');
+	_putchar('8');
 	_putchar('\n');
 }
