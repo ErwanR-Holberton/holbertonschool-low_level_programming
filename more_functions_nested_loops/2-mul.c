@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * _isupper - check the code.
- * @c: the character to test
- * Return: Always 0.
+ * mul - check the code.
+ * @a: first number
+ * @b: second number
+ * Return: a times b.
  */
-int _isupper(int c)
+int mul(int a, int b)
 {
-	return (c >= 'A' && c <= 'Z');
+	return (a * b);
 }
