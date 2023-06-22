@@ -1,11 +1,16 @@
 #include "main.h"
 
 /**
- * _isupper - check the code.
- * @c: the character to test
- * Return: Always 0.
+ * print_most_numbers - check the code.
+ *
+ * Return: Nothing
  */
-int _isupper(int c)
+void print_most_numbers(void)
 {
-	return (c >= 'A' && c <= 'Z');
+	int count;
+
+        for (count = 0; count < 10; count++)
+		if (count != 2 && count != 4)
+			_putchar(count + '0');
+	_putchar('\n');
 }
