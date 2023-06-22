@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _islower - check the code
- * @c: The character to test
+ * print_numbers - check the code
  *
- * Return: 1 if c is lower.
+ * Return: Nothing.
  */
-int _islower(int c)
+void print_numbers(void)
 {
-	if ((c >= 'a') && (c <= 'z'))
-		return (1);
-	return (0);
+	int count;
+
+	for (count = 0; count < 10; count++)
+		_putchar(count + '0');
 }
