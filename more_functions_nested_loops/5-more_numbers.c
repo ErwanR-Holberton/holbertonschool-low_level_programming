@@ -1,11 +1,20 @@
 #include "main.h"
 
 /**
- * _isupper - check the code.
- * @c: the character to test
- * Return: Always 0.
+ * more_numbers - check the code.
+ *
+ * Return: Nothing
  */
-int _isupper(int c)
+void more_numbers(void)
 {
-	return (c >= 'A' && c <= 'Z');
+	int lines, number;
+
+	for (lines = 0; lines < 10; lines++)
+		for (number = 0; number <= 14; number++)
+		{
+			if (number > 9)
+				_putchar('1');
+			_putchar(number % 10);
+		}
+	_putchar('\n');
 }
