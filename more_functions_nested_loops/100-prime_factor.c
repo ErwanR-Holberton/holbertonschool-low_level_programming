@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * main - check the code
  *
@@ -7,9 +7,17 @@
  */
 int main(void)
 {
-    print_triangle(2);
-    print_triangle(10);
-    print_triangle(1);
-    print_triangle(0);
-    return (0);
+	long int number = 612852475143;
+	int count;
+
+	for (count = 2; count < number; count++)
+	{
+		if (number % count == 0)
+		{
+			number = number / count;
+			count = 1;
+		}
+	}
+	printf("%ld\n", number);
+	return (0);
 }
