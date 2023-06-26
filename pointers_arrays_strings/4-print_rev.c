@@ -18,5 +18,5 @@ void print_rev(char *s)
 		 count--;
 		_putchar(s[count]);
 	}
-	_putchar('\n');
+/*	_putchar('\n');*/
 }
