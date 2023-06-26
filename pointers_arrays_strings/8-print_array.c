@@ -3,7 +3,7 @@
 /**
  * print_array - check the code
  * @a: array start
- * @b: array size
+ * @n: array size
  * Return: Nothing
  */
 void print_array(int *a, int n)
