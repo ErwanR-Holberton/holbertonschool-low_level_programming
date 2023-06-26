@@ -15,7 +15,7 @@ void rev_string(char *s)
 
 	lenght--;
 	count = lenght;
-	while (count >= lenght / 2)
+	while (count > lenght / 2)
 	{
 		tempo = s[lenght - count];
 		s[lenght - count] = s[count];
