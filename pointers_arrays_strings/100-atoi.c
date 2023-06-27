@@ -21,8 +21,6 @@ int _atoi(char *s)
 		}
 		else if (s[count] == '-' && valuefound == 0)
 			sign = sign * -1;
-		else if (valuefound == 0)
-			sign = 1;
 
 	}
 	return (sign * value);
