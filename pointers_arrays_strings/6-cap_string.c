@@ -8,22 +8,19 @@
  */
 char *cap_string(char *str)
 {
-	int i, word = 0;
+	int i, NextShouldBeMaj = 1;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (word == 0)
+		if (NextShouldBeMaj == 1)
 		{
 			if (str[i] >= 'a' && str[i] <= 'z')
-			{
 				str[i] = str[i] - 32;
-				word = 1;
-			}
-			else if (str[i] >= 'A' && str[i] <= 'Z')
-				word = 1;
+
+			NextShouldBeMaj = 0;
 		}
-		else if (str[i] < 'a' || str[i] > 'z')
-			word = 0;
+		if (str[i] == ' ' || str[i] == '.' || str[i] == '\n' || str[i] == '\t')
+			NextShouldBeMaj = 1;
 	}
 	return (str);
 }
