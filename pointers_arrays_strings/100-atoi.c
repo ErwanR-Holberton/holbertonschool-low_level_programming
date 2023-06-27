@@ -20,9 +20,7 @@ int _atoi(char *s)
 				valuefound = 1;
 		}
 		else if (s[count] == '-' && valuefound == 0)
-			sign = -1;
-		else if (s[count] == '+' && valuefound == 0)
-			sign = 1;
+			sign = sign * -1;
 		else if (valuefound == 0)
 			sign = 1;
 
