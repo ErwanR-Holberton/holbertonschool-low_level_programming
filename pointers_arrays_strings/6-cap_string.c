@@ -19,6 +19,8 @@ char *cap_string(char *str)
 				str[i] = str[i] - 32;
 				word = 1;
 			}
+			else if (str[i] >= 'A' && str[i] <= 'Z')
+				word = 1;
 		}
 		else if (str[i] < 'a' || str[i] > 'z')
 			word = 0;
