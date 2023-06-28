@@ -17,7 +17,7 @@ char *rot13(char *str)
 		{
 			if (letters[j] == str[i])
 			{
-				j = ((j - (26 * j > 25) +13) % 26 )+ (26 * j > 25);
+				j = ((j - (26 * (j > 25)) +13) % 26 )+ (26 * (j > 25));
 				str[i] = letters[j];
 			}
 		}
