@@ -13,15 +13,17 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
 	}
 
-	for (; n >= power10 * 10; )
+	for (; n >= power10 * 10 || -n >= power10 * 10 ; )
 		power10 = power10 * 10;
 
 	while (power10 > 0)
 	{
-		_putchar(n / power10 % 10 + '0');
+		if (n < 0)
+			_putchar(-(n / power10 % 10) + '0');
+		else
+			_putchar(n / power10 % 10 + '0');
 		power10 = power10 / 10;
 	}
 
