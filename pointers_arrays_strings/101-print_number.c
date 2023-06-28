@@ -8,24 +8,21 @@
  */
 void print_number(int n)
 {
-	int power10 = 1;
-	unsigned int NBecomesPositive = -n;
+	unsigned int power10 = 1;
+	unsigned int NBecomesPositive = -n, n2 = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = NBecomesPositive;
+		n2 = NBecomesPositive;
 	}
 
-	for (; n >= power10 * 10 || -n >= power10 * 10 ; )
+	for (; n2 >= power10 * 10; )
 		power10 = power10 * 10;
 
 	while (power10 > 0)
 	{
-		if (n < 0)
-			_putchar(-(n / power10 % 10) + '0');
-		else
-			_putchar(n / power10 % 10 + '0');
+		_putchar(n2 / power10 % 10 + '0');
 		power10 = power10 / 10;
 	}
 
