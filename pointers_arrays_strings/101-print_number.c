@@ -8,22 +8,24 @@
  */
 void print_number(int n)
 {
-	unsigned int power10 = 1;
-	unsigned int NBecomesPositive = -n, n2 = n;
+	int power10 = 1, print = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n2 = NBecomesPositive;
 	}
 
-	for (; n2 >= power10 * 10; )
-		power10 = power10 * 10;
-
-	while (power10 > 0)
+	for (power10 = 1000000000; power10 >= 1; power10 = power10 / 10)
 	{
-		_putchar(n2 / power10 % 10 + '0');
-		power10 = power10 / 10;
+		if (n / power10 % 10 != 0 || print == 1 || power10 == 1)
+		{
+			if (n / power10 % 10 < 0)
+				_putchar('0' - (n / power10 % 10));
+			else
+				_putchar('0' + n / power10 % 10);
+
+			print = 1;
+		}
 	}
 
 }
