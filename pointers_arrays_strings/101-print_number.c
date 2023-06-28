@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_number - check the code
  * @n: number to print
@@ -9,10 +9,12 @@
 void print_number(int n)
 {
 	int power10 = 1;
+	unsigned int NBecomesPositive = -n;
 
 	if (n < 0)
 	{
 		_putchar('-');
+		n = NBecomesPositive;
 	}
 
 	for (; n >= power10 * 10 || -n >= power10 * 10 ; )
