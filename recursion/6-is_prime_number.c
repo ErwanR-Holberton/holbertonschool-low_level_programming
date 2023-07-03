@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * recursive_prime - check the code
- * @x: number determine if prime number
+ * @n: number determine if prime number
  * @i: iterate recursively from n to 1
  * Return: 1 if is a prime
  */
