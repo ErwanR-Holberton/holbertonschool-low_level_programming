@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * _pow_recursion - check the code
- * @n: n to get the power of
- *
- * Return: the factorial result
+ * @x: x * x y times
+ * @y: the power, also used to count recursion
+ * Return: x to the power of y
  */
 int _pow_recursion(int x, int y)
 {
