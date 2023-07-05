@@ -32,9 +32,6 @@ int main(int argc, char **argv)
 			value2 = value2 * 10 + *argv[2] - '0';
 	}
 	value2 = value2 * sign;
-/*	value1 = _atoi(*argv[1]);
-	value2 = _atoi(*argv[2]);*/
-	printf("%d %d\n", value1, value2);
 	printf("%d\n", value1 * value2);
 	return (0);
 }
