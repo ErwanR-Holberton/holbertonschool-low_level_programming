@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "../pointers_arrays_strings/100-atoi.c"
 /**
  * main - Entry point
  * @argc: number of arguments ?
