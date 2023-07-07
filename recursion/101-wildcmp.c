@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * my_strlen - check the code
  * @s: start of string to calculate the lenght of
@@ -20,7 +19,6 @@ int my_strlen(char *s)
  */
 int my_wildcmp(char *s1, char *s2)
 {
-	printf(" %c %c :", *s1, *s2);
 	if (*s2 == '\0')
 	{
 		if (*s1 == '\0')
@@ -31,7 +29,7 @@ int my_wildcmp(char *s1, char *s2)
 		return (wildcmp(s1, s2 + 1));
 	if (*(s2 + 1) != '*')
 	{
-		if (*s1 != *(s2 + 1 ))
+		if (*s1 != *(s2 + 1))
 			return (my_wildcmp(s1 + 1, s2));
 		else
 			return (wildcmp(s1 + 1, s2 + 2));
@@ -47,7 +45,6 @@ int my_wildcmp(char *s1, char *s2)
  */
 int wildcmp(char *s1, char *s2)
 {
-	printf("%c %c:", *s1, *s2);
 	if (*s2 == '\0')
 	{
 		if (*s1 == '\0')
