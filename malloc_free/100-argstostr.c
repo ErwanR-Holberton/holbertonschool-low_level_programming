@@ -27,11 +27,10 @@ char *argstostr(int ac, char **av)
 		lenght = lenght + j + 1;
 	}
 
-	newstr = malloc(lenght + 1);
+	newstr = malloc(lenght);
 	if (newstr == NULL)
 		return (0);
 
-	newstr[lenght] = '\0';
 	for (i = 0, lenght = 0; i < ac; i++)
 	{
 		for (j = 0; *(av[i] + j) != '\0'; j++)
