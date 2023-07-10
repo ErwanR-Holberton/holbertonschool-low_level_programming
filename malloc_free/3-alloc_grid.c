@@ -52,10 +52,10 @@ int **alloc_grid(int width, int height)
 		arrayOfarrays[i] = new_array_line(width);
 		if (arrayOfarrays == NULL)
 		{
-			/*for (i--; i >= 0; i--)
+			for (i--; i >= 0; i--)
 				free(arrayOfarrays[i]);
 
-			free(arrayOfarrays);*/
+			free(arrayOfarrays);
 			return (NULL);
 		}
 	}
