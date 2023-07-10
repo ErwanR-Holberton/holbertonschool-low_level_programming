@@ -36,7 +36,8 @@ int count_words(char *str)
 		else if (word == 0)
 			word = 1;
 	}
-
+	if (wordcount == 0)
+		return (-1);
 	return (wordcount);
 }
 /**
@@ -54,7 +55,8 @@ char **strtow(char *str)
 		return (0);
 
 	wordcount = count_words(str);
-
+	if (wordcount == -1)
+		return (0);
 	arrayofpointers = malloc(sizeof(char *) * (wordcount + 1));
 	if (arrayofpointers == NULL)
 		return (0);
