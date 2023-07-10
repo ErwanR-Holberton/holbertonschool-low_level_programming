@@ -51,7 +51,13 @@ int **alloc_grid(int width, int height)
 	{
 		arrayOfarrays[i] = new_array_line(width);
 		if (arrayOfarrays == NULL)
-			free(arrayOfarrays);
+		{
+			/*for (i--; i >= 0; i--)
+				free(arrayOfarrays[i]);
+
+			free(arrayOfarrays);*/
+			return (NULL);
+		}
 	}
 
 	return (arrayOfarrays);
