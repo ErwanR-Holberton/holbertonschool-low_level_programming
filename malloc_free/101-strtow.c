@@ -55,7 +55,7 @@ char **strtow(char *str)
 
 	wordcount = count_words(str);
 
-	arrayofpointers = malloc(sizeof(wordcount + 1));
+	arrayofpointers = malloc(sizeof(char *) * (wordcount + 1));
 	if (arrayofpointers == NULL)
 		return (0);
 
