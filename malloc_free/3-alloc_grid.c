@@ -11,13 +11,13 @@ int *new_array_line(int w)
 	int *line;
 	int i = 0;
 
-	line = malloc(sizeof(int) * (w + 1));
+	line = malloc(sizeof(int) * w);
 	if (line == NULL)
 		return (0);
 
 	for (i = 0; i < w; i++)
 		line[i] = 0;
-	line[w] = '\0';
+	
 	return (line);
 }
 /**
