@@ -48,7 +48,11 @@ int **alloc_grid(int width, int height)
 	}
 
 	for (i = 0; i < height; i++)
+	{
 		arrayOfarrays[i] = new_array_line(width);
+		if (arrayOfarrays == NULL)
+			free(arrayOfarrays);
+	}
 
 	return (arrayOfarrays);
 }
