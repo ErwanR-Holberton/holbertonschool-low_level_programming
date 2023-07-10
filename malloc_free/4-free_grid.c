@@ -7,6 +7,7 @@
  *
  * free 2d Array
  *
+ * @grid: 2d array to free
  * @height: height of the array
  * Return: NOTHING
  */
