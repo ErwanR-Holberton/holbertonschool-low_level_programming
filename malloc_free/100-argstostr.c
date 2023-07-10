@@ -24,13 +24,14 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; *(av[i] + j) != '\0';)
 			j++;
-		lenght = lenght + j + 1;
+		lenght = lenght + j;
 	}
 
-	newstr = malloc(lenght);
+	newstr = malloc(lenght + 1);
 	if (newstr == NULL)
 		return (0);
 
+	newstr[lenght] = '\0';
 	for (i = 0, lenght = 0; i < ac; i++)
 	{
 		for (j = 0; *(av[i] + j) != '\0'; j++)
