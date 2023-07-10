@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 		for (; s1[size1] != '\0';)
 			size1++;
 
-	if (s1 != 0)
+	if (s2 != 0)
 		for (; s2[size2] != '\0';)
 			size2++;
 
@@ -27,11 +27,13 @@ char *str_concat(char *s1, char *s2)
 	if (newstr == NULL)
 		return (0);
 
-	for (; size2 >= 0; size2--)
-		newstr[size1 + size2] = s2[size2];
+	if (size2 != 0)
+		for (; size2 >= 0; size2--)
+			newstr[size1 + size2] = s2[size2];
 
-	for (size1--; size1 >= 0; size1--)
-		newstr[size1] = s1[size1];
+	if (size1 != 0)
+		for (size1--; size1 >= 0; size1--)
+			newstr[size1] = s1[size1];
 
 	return (newstr);
 }
