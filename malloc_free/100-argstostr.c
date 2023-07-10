@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; *(av[i] + j) != '\0';)
 			j++;
-		lenght = lenght + j;
+		lenght = lenght + j - 1;
 	}
 
 	newstr = malloc(lenght + 1);
