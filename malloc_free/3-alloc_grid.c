@@ -13,11 +13,14 @@ int *new_array_line(int w)
 
 	line = malloc(sizeof(int) * w);
 	if (line == NULL)
+	{
+		free(line);
 		return (0);
+	}
 
 	for (i = 0; i < w; i++)
 		line[i] = 0;
-	
+
 	return (line);
 }
 /**
@@ -39,7 +42,10 @@ int **alloc_grid(int width, int height)
 
 	arrayOfarrays = malloc(sizeof(int *) * height);
 	if (arrayOfarrays == NULL)
+	{
+		free(arrayOfarrays);
 		return (0);
+	}
 
 	for (i = 0; i < height; i++)
 		arrayOfarrays[i] = new_array_line(width);
