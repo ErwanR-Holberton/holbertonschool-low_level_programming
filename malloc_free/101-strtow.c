@@ -59,7 +59,7 @@ char **strtow(char *str)
 	wordcount = count_words(str);
 	if (wordcount == -1)
 		return (0);
-	arrayofpointers = malloc(sizeof(char *) * (wordcount + 1));
+	arrayofpointers = malloc(sizeof(char *) * (wordcount));
 	if (arrayofpointers == NULL)
 		return (0);
 
@@ -69,7 +69,7 @@ char **strtow(char *str)
 			str++;
 		lenght = get_next_word_lenght(str);
 
-		arrayofpointers[i] = malloc(sizeof(int) * (lenght + 1));
+		arrayofpointers[i] = malloc(sizeof(int) * (lenght));
 		if (arrayofpointers[i] == NULL)
 		{
 			for (i--; i >= 0; i--)
