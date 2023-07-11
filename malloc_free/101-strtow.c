@@ -36,6 +36,8 @@ int count_words(char *str)
 		else if (word == 0)
 			word = 1;
 	}
+	if (word == 1)
+		wordcount++;
 	if (wordcount == 0)
 		return (-1);
 	return (wordcount);
