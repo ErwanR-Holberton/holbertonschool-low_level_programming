@@ -17,13 +17,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int size1 = 0, size2 = 0;
 	int n2 = n - 1;
 
-	if (s1 != 0)
+	if (s1 != NULL)
 		for (; s1[size1] != '\0';)
 			size1++;
 	else
 		s1 = "";
 
-	if (s2 != 0)
+	if (s2 != NULL)
 		for (; s2[size2] != '\0';)
 			size2++;
 	else
