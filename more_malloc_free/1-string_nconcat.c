@@ -32,7 +32,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (size2 > n2)
 	{
 		size2 = n2;
-		newstr = malloc(size1 + n2 + 1);
+		newstr = malloc(size1 + n2 + 2);
 	}
 	else
 		newstr = malloc(size1 + size2 + 1);
