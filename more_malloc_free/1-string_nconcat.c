@@ -42,6 +42,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		newstr[size1 + i] = s2[i];
 
 	newstr[size1 + n] = 0;
-	
+
 	return (newstr);
 }
