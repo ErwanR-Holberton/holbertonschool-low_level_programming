@@ -18,12 +18,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	newarray = malloc(size * (nmemb + 1));
+	newarray = malloc(size * nmemb );
 
 	if (newarray == NULL)
 		return (NULL);
 
-	for (i = 0; i < size * nmemb + 1; i++)
+	for (i = 0; i < size * nmemb; i++)
 		newarray[i] = 0;
 
 
