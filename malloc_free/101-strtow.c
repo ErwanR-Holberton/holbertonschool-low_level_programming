@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * get_next_word_lenght - check the code.
  * @str: string to search
@@ -59,7 +60,7 @@ char **strtow(char *str)
 	wordcount = count_words(str);
 	if (wordcount == -1)
 		return (0);
-	arrayofpointers = malloc(sizeof(char *) * (wordcount));
+	arrayofpointers = malloc(sizeof(char *) * wordcount);
 	if (arrayofpointers == NULL)
 		return (0);
 
@@ -68,8 +69,8 @@ char **strtow(char *str)
 		for (j = 0; *str == ' ' ;)
 			str++;
 		lenght = get_next_word_lenght(str);
-
-		arrayofpointers[i] = malloc(sizeof(int) * (lenght));
+		printf("i : %d %d %s\n", i, lenght, str);
+		arrayofpointers[i] = malloc(sizeof(int) * lenght);
 		if (arrayofpointers[i] == NULL)
 		{
 			for (i--; i >= 0; i--)
