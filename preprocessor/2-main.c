@@ -1,12 +1,10 @@
 #include <stdio.h>
 /**
- * *_calloc - check the code.
+ * main - check the code.
  *
- * allocates memory for an array of nmemb elements of size bytes each
+ * print file name
  *
- * @nmemb: number of elements
- * @size: size of each element
- * Return: pointer to the allocated memory or null if faillure
+ * Return: NOTHING
  */
 int main(void)
 {
