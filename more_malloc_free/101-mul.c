@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 {
 	int i, j, k, len1 = 0, len2 = 0, mul = 0;
 	char *result;
+	int index;
 
 	if (argc != 3)
 		exit(98);
@@ -36,11 +37,25 @@ int main(int argc, char **argv)
 			mul = (argv[1][len1 - k - 1] - '0') * (argv[2][len2 - j - 1] - '0');
 			result[i - k - j] = result[i - k - j] + (mul % 10);
 			result[i - 1 - k - j] = result[i - 1 - k - j] + (mul / 10);
-			if (result[i - k - j] - '0' >= 10)
+			/*if (result[i - k - j] - '0' >= 10)
 			{
 				result[i - k - j] -= 10;
 				result[i - 1 - k - j]++;
+				if (result[i - 1 - k - j] - '0' >= 10)
+				{
+					result[i - 1 - k - j] -= 10;
+					result[i - 2 - k - j]++;
+				}
+
+			}*/
+			index = i - j - k;
+			for (;result[index] - '0' >= 10; index--)
+			{
+				result[index] -= 10;
+				result[index - 1]++;
 			}
+			/*if (result[i - k - j] > '9' || result[i - k - j] < '0')
+				printf("j: %d k: %d %d\n", j, k, result[i - k - j] - '0');*/
 		}
 	}
 
