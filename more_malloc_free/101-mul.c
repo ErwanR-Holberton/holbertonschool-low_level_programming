@@ -14,7 +14,6 @@ int main(int argc, char **argv)
 {
 	int i, j, k, len1 = 0, len2 = 0, mul = 0;
 	char *result;
-	int count;
 
 	if (argc != 3)
 		exit(98);
@@ -23,41 +22,34 @@ int main(int argc, char **argv)
 		len1++;
 	for (; *(argv[2] + len2) != '\0';)
 		len2++;
-printf("%d %d\n", len1, len2);
-printf("%s %s\n", argv[1], argv[2]);
+
 	result = malloc(len1 + len2);
 
 	for (i = 0; i < len1 + len2; i++)
 		result[i] = '0';
 
-	for (i = len2 + len1 - 1; i >= 0; i--)
-		for (j = len2 - 1; j >= 0; j--)
+	i = len2 + len1 - 1;
+	for (j = 0; j < len2; j++)
+	{
+		for (k = 0; k < len1; k++)
 		{
-			for (k = len1 - 1; k >= j; k--)
+			mul = (argv[1][len1 - k - 1] - '0') * (argv[2][len2 - j - 1] - '0');
+			result[i - k - j] = result[i - k - j] + (mul % 10);
+			result[i - 1 - k - j] = result[i - 1 - k - j] + (mul / 10);
+			if (result[i - k - j] - '0' >= 10)
 			{
-				mul = (argv[1][k] - '0') * (argv[2][j] - '0');
-				result[i] = result[i] + (mul % 10);
-				result[i - 1] = result[i - 1] + (mul / 10);
-
-			for (count = 0; result[count] != '\0'; count++)
-				printf("%c", result[i] + '0');
-			printf("\n");
+				result[i - k - j] -= 10;
+				result[i - 1 - k - j]++;
 			}
 		}
-
-	for (i = len2 + len1 - 1; i >= 0; i--)
-	{
-		if (result[i] >= 10)
-		{
-			result[i - 1] = result[i - 1] + (result[i] / 10);
-			result[i] = result[i] - (result[i] / 10);
-		}
-		result[i] = result[i] + '0';
 	}
 
-	/*for (i = 0; i < len1 + len2; i++)
+	for (i = 0; result[i] == '0';)
+		i++;
+	for (; i < len1 + len2; i++)
 		_putchar(result[i]);
-	_putchar('\n');*/
-	/*free(result);*/
+	_putchar('\n');
+
+	free(result);
 	return (0);
 }
