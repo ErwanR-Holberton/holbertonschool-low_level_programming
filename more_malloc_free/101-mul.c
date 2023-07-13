@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 
 	result = malloc(len1 + len2);
 	if (result == NULL)
+		return (0);
 
 
 	for (i = 0; i < len1 + len2; i++)
