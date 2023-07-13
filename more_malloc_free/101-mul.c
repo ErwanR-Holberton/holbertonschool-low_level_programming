@@ -17,7 +17,15 @@ int main(int argc, char **argv)
 	int index;
 
 	if (argc != 3)
+	{
+		_putchar('E');
+		_putchar('r');
+		_putchar('r');
+		_putchar('o');
+		_putchar('r');
+		_putchar('\n');
 		exit(98);
+	}
 
 	for (; *(argv[1] + len1) != '\0';)
 		len1++;
@@ -25,6 +33,8 @@ int main(int argc, char **argv)
 		len2++;
 
 	result = malloc(len1 + len2);
+	if (result == NULL)
+
 
 	for (i = 0; i < len1 + len2; i++)
 		result[i] = '0';
