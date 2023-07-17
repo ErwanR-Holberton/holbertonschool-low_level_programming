@@ -1,2 +1,6 @@
 *
-!*/function_pointers/*
+!*/
+!*.*
+*.o
+*.json
+*main.c
