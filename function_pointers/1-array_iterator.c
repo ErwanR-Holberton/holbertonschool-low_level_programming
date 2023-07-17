@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * array_iterator - execute fuction with each element of the array as parameter
  * @array: address of the array
@@ -7,7 +8,7 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
+	unsigned long int i;
 
 	for (i = 0; i < size; i++)
 		if (action != 0)
