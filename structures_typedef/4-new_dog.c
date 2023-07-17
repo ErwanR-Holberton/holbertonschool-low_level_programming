@@ -10,9 +10,9 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	long unsigned int i;
-
+	unsigned long int i;
 	struct dog *my_dog2 = malloc(sizeof(struct dog));
+
 	if (my_dog2 == 0)
 	{
 		free(my_dog2);
@@ -22,6 +22,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	(*my_dog2).name = malloc(sizeof(name) + 1);
 	(*my_dog2).age = age;
 	(*my_dog2).owner = malloc(sizeof(owner) + 1);
+
 	if ((*my_dog2).name == 0 || (*my_dog2).owner == 0)
 	{
 		free((*my_dog2).owner);
@@ -34,5 +35,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		(*my_dog2).name[i] = name[i];
 	for (i = 0; i <= sizeof(owner); i++)
 		(*my_dog2).owner[i] = owner[i];
-	return(my_dog2);
+
+	return (my_dog2);
 }
