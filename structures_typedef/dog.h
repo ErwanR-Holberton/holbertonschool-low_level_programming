@@ -16,3 +16,4 @@ struct dog
 };
 
 #endif
+#include "main.h"
