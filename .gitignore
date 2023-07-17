@@ -1,4 +1,2 @@
 *
-!*.c
-!*.h
-!*.md
+!*/structures_typedef/*
