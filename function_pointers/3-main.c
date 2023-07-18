@@ -14,9 +14,7 @@ int main(int argc, char **argv)
 
 	if (argc != 4)
 	{
-		printf("Error1 %d\n", argc);
-		for (; argc < 0; argc--)
-			printf("%s\n", argv[argc]);
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -30,7 +28,7 @@ int main(int argc, char **argv)
 	arg2 = atoi(argv[3]);
 	if (arg2 == 0 && (*argv[2] == '/' || *argv[2] == '%'))
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(100);
 	}
 	printf("%d\n",f(arg1, arg2));
