@@ -18,8 +18,8 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (*argv[2] != '+' && *argv[2] != '-' &&
-	*argv[2] != '*' && *argv[2] != '/' && *argv[2] != '%')
+	if ((*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' &&
+	 *argv[2] != '/' && *argv[2] != '%') || *(argv[2] + 1) != '0')
 	{
 		printf("Error\n");
 		exit(99);
@@ -31,6 +31,6 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n",f(arg1, arg2));
+	printf("%d\n", f(arg1, arg2));
 	return (0);
 }
