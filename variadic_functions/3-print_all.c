@@ -15,6 +15,11 @@ void print_all(const char * const format, ...)
 
 	va_start(ArgsInfos, format);
 
+	while (format == NULL)
+	{
+		return;
+	}
+
 	while (*(format + i) != '\0')
 	{
 
