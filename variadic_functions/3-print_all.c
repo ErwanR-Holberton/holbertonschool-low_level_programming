@@ -23,25 +23,24 @@ void print_all(const char * const format, ...)
 
 	while (*(format + i) != '\0')
 	{
-
 		switch (*(format + i))
 		{
 		case 'c':
 			printf("%c", va_arg(ArgsInfos, int));
 			break;
-
 		case 'i':
 			printf("%d", va_arg(ArgsInfos, int));
 			break;
-
 		case 'f':
 			printf("%f", va_arg(ArgsInfos, double));
 			break;
-
 		case 's':
 			s = va_arg(ArgsInfos, char *);
 			if (s == 0)
+			{
 				printf("(nil)");
+				break;
+			}
 			printf("%s", s);
 			break;
 		}
