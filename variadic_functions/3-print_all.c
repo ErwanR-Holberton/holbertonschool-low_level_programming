@@ -14,13 +14,11 @@ void print_all(const char * const format, ...)
 	va_list ArgsInfos;
 
 	va_start(ArgsInfos, format);
-
 	while (format == NULL)
 	{
 		printf("\n");
 		return;
 	}
-
 	while (*(format + i) != '\0')
 	{
 		switch (*(format + i))
@@ -47,7 +45,6 @@ void print_all(const char * const format, ...)
 		if (*(format + i + 1) != '\0' && (*(format + i) == 'c' ||
 		*(format + i) == 'i' || *(format + i) == 's' || *(format + i) == 'f'))
 			printf(", ");
-
 		i++;
 	}
 	printf("\n");
