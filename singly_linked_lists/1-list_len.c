@@ -1,9 +1,9 @@
 #include "lists.h"
 /**
- * list_len - print a singly linked list
+ * list_len - count the elements of a singly linked list
  * @h: points to the start of a list
  *
- * Description: print a singly linked list
+ * Description: count the elements of a singly linked list
  * Return: the number of nodes in the list
  */
 size_t list_len(const list_t *h)
