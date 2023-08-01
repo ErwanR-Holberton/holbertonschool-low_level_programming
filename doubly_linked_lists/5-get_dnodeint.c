@@ -2,7 +2,7 @@
 /**
  * *get_dnodeint_at_index - get the n node
  * @head: points to the start of a list
- * index: number of the node we want
+ * @index: number of the node we want
  *
  * Return: address of the node or NULL
  */
