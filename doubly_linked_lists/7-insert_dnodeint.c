@@ -15,15 +15,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL)
 		return (NULL);
+	if (idx == 0)
+		*h = newnode;
 	while (copyhead != NULL)
 	{
 		if (i == idx)
 		{
 			newnode->n = n;
-			if (i != 0)
-				newnode->prev = copyhead->prev;
-			else
-				newnode->prev = NULL;
+			newnode->prev = copyhead->prev;
 			newnode->next = copyhead;
 			if (newnode->next != NULL)
 				newnode->next->prev = newnode;
