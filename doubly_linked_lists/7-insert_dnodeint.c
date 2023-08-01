@@ -17,10 +17,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	while (copyhead != NULL)
 	{
-
-
-		copyhead = copyhead->next;
-		i++;
 		if (i == idx)
 		{
 			newnode->n = n;
@@ -30,6 +26,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			newnode->prev->next = newnode;
 			return (newnode);
 		}
+		copyhead = copyhead->next;
+		i++;
 	}
 	return (NULL);
 }
