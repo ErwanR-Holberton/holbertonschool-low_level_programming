@@ -2,7 +2,7 @@
 /**
  * delete_dnodeint_at_index - delete node number index
  * @head: points to the start of a list
- * @idx: index to put the new node
+ * @index: index to put the new node
  *
  * Return: 1 or -1
  */
