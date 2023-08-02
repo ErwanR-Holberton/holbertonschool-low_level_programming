@@ -17,5 +17,4 @@ void print_binary(unsigned long int n)
 		_putchar((n >> i) + '0');
 		n = n - ((n >> i) << i);
 	}
-	_putchar('\n');
 }
