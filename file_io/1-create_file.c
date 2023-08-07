@@ -17,7 +17,7 @@ int create_file(const char *filename, char *text_content)
 	if (file_descriptor == -1)
 		return (-1);
 	if (text_content)
-		chars_printed = write(file_descriptor, text_content, strlen(text_content) + 1);
+		chars_printed = write(file_descriptor, text_content, strlen(text_content));
 	close(file_descriptor);
 	if (chars_printed == -1)
 		return (-1);
