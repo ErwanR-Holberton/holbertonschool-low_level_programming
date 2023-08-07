@@ -19,7 +19,7 @@ int main(int ac, char **av)
 	filedes_from = open(av[1], O_RDONLY);
 	check_errors(98, filedes_from, 0, av[1]);
 
-	filedes_to = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	filedes_to = creat(av[2], 0664);
 	check_errors(99, filedes_to, 0, av[2]);
 
 	while (nb_read == 1024)
