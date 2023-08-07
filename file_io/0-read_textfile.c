@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (count + 10 > letters)
 			n = letters - count;
 		nb_read = read(descriptor, buffer, n);
-		write(1, buffer, nb_read);
+		write(STDOUT_FILENO, buffer, nb_read);
 		count += nb_read;
 		if (nb_read != 10)
 			break;
