@@ -1,10 +1,11 @@
 #include "main.h"
 /**
- * print_binary - print the binary representation of n
- * @n: the value to print in binary
+ * read_textfile - read input file and print it in stdout
+ * @filename: the name of the file to read
+ * @letters: the amount of chars to print
  *
- * Description: print the binary representation of n
- * Return: NOTHING
+ * Description: read input file and print it in stdout
+ * Return: the amount printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -29,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			break;
 	}
 
-	close(*filename);
+	close(descriptor);
 
-	return(count);
+	return (count);
 }
