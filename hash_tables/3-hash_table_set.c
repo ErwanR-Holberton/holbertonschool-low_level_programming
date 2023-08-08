@@ -19,10 +19,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node_pointer = ht->array[index];
 	while (node_pointer != NULL)
 	{
-		if (strcmp(node_pointer->key, key))
+		if (strcmp(node_pointer->key, key) == 0)
 		{
 			free(node_pointer->value);
-			node_pointer->key = strdup((char *)value);
+			node_pointer->value = strdup((char *)value);
 			if (node_pointer->key == NULL)
 			{
 				free(newnode);
