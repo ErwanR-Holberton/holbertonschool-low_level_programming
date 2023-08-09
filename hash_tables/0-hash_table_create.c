@@ -7,6 +7,7 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
+	unsigned int i;
 	hash_table_t *head = malloc(sizeof(hash_table_t));
 
 	if (head == NULL)
@@ -20,6 +21,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(head);
 		return (0);
 	}
+	for (i = 0; i < size; i++)
+		head->array[i] = 0;
 
 	return (head);
 }
