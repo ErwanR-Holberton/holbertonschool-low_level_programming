@@ -76,35 +76,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	ht->array[index] = newnode;
-	node_pointer = ht->shead;
-	if (ht->shead == NULL)
-	{
-		ht->shead = newnode;
-		ht->stail = newnode;
-	}
-	while (node_pointer != NULL)
-	{
-		if (strcmp(node_pointer->key, newnode->key) > 0)
-		{ /* if 1st one is after 2nd one in alphabet*/
-			newnode->sprev = node_pointer->sprev;
-			newnode->snext = node_pointer;
-			node_pointer->sprev = newnode;
-			if (newnode->sprev == NULL)
-				ht->shead = newnode;
-			else
-				newnode->sprev->snext = newnode;
-			return (1);
-		}
-		else if (node_pointer->snext == NULL)
-		{
-			newnode->snext = node_pointer->snext;
-			newnode->sprev = node_pointer;
-			node_pointer->snext = newnode;
-			ht->stail = newnode;
-			return (1);
-		}
-		node_pointer = node_pointer->snext;
-	}
+	add_node_sorted(&node_pointer, &newnode, &ht);
 	return (1);
 }
 /**
@@ -202,4 +174,45 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht->array);
 	free(ht);
+}
+
+/**
+ * add_node_sorted - do the sorting bit of the function set
+ * @ht: the pointer to the hash table
+ * @p: pointer_node
+ * @n: newnode
+ *
+ * Return: NOTHING
+ */
+void add_node_sorted(shash_node_t **p, shash_node_t **n, shash_table_t **ht)
+{
+	*p = (*ht)->shead;
+	if ((*ht)->shead == NULL)
+	{
+		(*ht)->shead = *n;
+		(*ht)->stail = *n;
+	}
+	while (*p != NULL)
+	{
+		if (strcmp((*p)->key, (*n)->key) > 0)
+		{ /* if 1st one is after 2nd one in alphabet*/
+			(*n)->sprev = (*p)->sprev;
+			(*n)->snext = *p;
+			(*p)->sprev = (*n);
+			if ((*n)->sprev == NULL)
+				(*ht)->shead = (*n);
+			else
+				(*n)->sprev->snext = (*n);
+			return;
+		}
+		else if ((*p)->snext == NULL)
+		{
+			(*n)->snext = (*p)->snext;
+			(*n)->sprev = (*p);
+			(*p)->snext = (*n);
+			(*ht)->stail = (*n);
+			return;
+		}
+		(*p) = (*p)->snext;
+	}
 }
