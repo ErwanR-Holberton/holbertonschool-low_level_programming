@@ -9,9 +9,9 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int range = size, i, left = 0, right = size - 1;
+	int i, left = 0, right = size - 1;
 
-	while (range != 0)
+	while (left <= right)
 	{
 		printf("Searching in array:");
 		for (i = left; i <= right; i++)
@@ -24,7 +24,6 @@ int binary_search(int *array, size_t size, int value)
 			right = i - 1;
 		else
 			left = i + 1;
-		range = right - left;
 	}
 	return (-1);
 }
