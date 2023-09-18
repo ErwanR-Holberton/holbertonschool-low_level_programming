@@ -2,6 +2,7 @@
 /**
  * linear_search - linear search in an array
  * @array: array to search
+ * @size: size of the array
  * @value: value to find
  * Return: index found or -1 (fail)
  */
